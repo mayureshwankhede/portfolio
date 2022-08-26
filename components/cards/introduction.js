@@ -23,16 +23,25 @@ const Introduction = () => {
           <span className="underline text-blue-600">available for hire</span>
         </div>
         <p className="text-gray-600 text-sm">
-          Over 90k+ students have enrolled and learned from my udemy course.
-          Teaching about web & App development, serverless, and React / Next.js.
+          Over 90k+ students have enrolled and learned from{" "}
+          <a
+            href="https://www.udemy.com/course/learn-flutter-beginners-course/"
+            className="text-blue-500 underline"
+          >
+            udemy course
+          </a>
+          .Back in the day I started playing with computers when I was 16
+          years-old. Since then I have been tinkering with all sorts of
+          technologies that in some way or another led me to work on Desktop &
+          Web Application, Mobile & VR games.
         </p>
       </div>
       <div className="flex-grow order-1">
         <img
-          src="/mayuresh_wankhede.jpg"
+          src="/mayuresh_wankhede_2.jpg"
           alt=""
           srcSet=""
-          className="rounded-full"
+          className="w-40 h-40 rounded-full"
         />
       </div>
     </div>
