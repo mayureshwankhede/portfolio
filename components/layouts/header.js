@@ -4,6 +4,22 @@ import { RoughNotation } from "react-rough-notation";
 import { useSelector, useDispatch } from "react-redux";
 import { changeName } from "../../redux/card";
 
+const Header = () => {
+  return (
+    <div className="header flex  justify-center">
+      <div className="navbar flex justify-center flex-wrap">
+        <Link title="Home" id="home" />
+        <Link title="Projects" id="projects" />
+        <Link title="Experience" id="experience" />
+        <Link title="Skills" id="skills" />
+      </div>
+      {/* <div className="px-2 flex-1">
+        <NightMode />
+      </div> */}
+    </div>
+  );
+};
+
 const Link = (props) => {
   const { title, id } = props;
 
@@ -14,11 +30,11 @@ const Link = (props) => {
   const cardName = useSelector((state) => state.card.name);
   const dispatch = useDispatch();
 
-  console.log(onHoverLink.name, cardName);
-
   return (
     <div
-      className={`px-2 cursor-pointer ${onHoverLink.id ? "font-bold" : ""}`}
+      className={`uppercase text-sm py-1 px-2 cursor-pointer ${
+        onHoverLink.id || id == cardName ? "font-bold" : ""
+      }`}
       onClick={() => dispatch(changeName(id))}
     >
       <RoughNotation
@@ -38,22 +54,6 @@ const Link = (props) => {
           {title}
         </RoughNotation>
       </RoughNotation>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="header flex justify-between">
-      <div className=" navbar flex">
-        <Link title="Home" id="home" />
-        <Link title="Projects" id="projects" />
-        <Link title="Experience" id="experience" />
-        <Link title="Skills" id="skills" />
-      </div>
-      <div className="px-2">
-        <NightMode />
-      </div>
     </div>
   );
 };

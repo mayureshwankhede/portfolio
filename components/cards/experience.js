@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useSelector } from "react-redux";
 const Experience = () => {
   const cardName = useSelector((state) => state.card.name);
+  const cardRef = useRef();
+  useEffect(() => {
+    if (cardName == "experience") {
+      cardRef.current.style.opacity = 0.5;
+      cardRef.current.style.top = "-6px";
+      setTimeout(() => {
+        cardRef.current.style.opacity = 1;
+        cardRef.current.style.top = "16px";
+      }, 200);
+    }
+  }, [cardName]);
+
   return (
     <div
-      className={`
-        bg-white shadow overflow-hidden sm:rounded-lg my-8 border-black border-2 card-shadow  ${
-          cardName == "experience" ? "-order-1" : ""
-        }
-      `}
+      ref={cardRef}
+      className={`relative transform transition-all duration-150 ease-out bg-white shadow overflow-hidden sm:rounded-lg my-8 border-black border-2 card-shadow  ${
+        cardName == "experience" ? "-order-1" : ""
+      }`}
     >
       <div className="px-4 pt-5 pb-2 sm:px-6">
-        <h3 className="text-lg leading-6 font-semibold text-gray-900">
+        <h3 className="text-lg leading-6 font-bold text-gray-900 uppercase">
           <RoughNotation
             type="highlight"
             show={cardName == "experience" ? true : false}
@@ -20,6 +31,16 @@ const Experience = () => {
           >
             Experience
           </RoughNotation>
+          <span>
+            {" "}
+            <RoughNotation
+              type="circle"
+              show={cardName == "experience" ? true : false}
+              color="#ff3b00"
+            >
+              4+
+            </RoughNotation>
+          </span>
         </h3>
       </div>
 

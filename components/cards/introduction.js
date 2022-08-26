@@ -1,11 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { RoughNotation } from "react-rough-notation";
 const Introduction = () => {
+  const cardName = useSelector((state) => state.card.name);
+
   return (
-    <div className="introduction flex justify-between p-2 pt-16 -order-2">
-      <div style={{ flex: "0 0 80%" }} className="pr-20">
+    <div
+      className={`introduction    flex flex-col justify-center items-center p-2 pt-16 -order-2 ${
+        cardName == "home" ? "block" : "hidden"
+      }`}
+    >
+      <div className="order-2 text-center">
         <h1
-          className={`font-bold text-4xl tracking-tight mb-1 text-gray-900 roboto `}
+          className={`mt-4 font-bold text-4xl tracking-tight mb-1 text-gray-900 playfair `}
         >
           Mayuresh Wankhede
         </h1>
@@ -20,7 +27,7 @@ const Introduction = () => {
           Teaching about web & App development, serverless, and React / Next.js.
         </p>
       </div>
-      <div className="flex-grow">
+      <div className="flex-grow order-1">
         <img
           src="/mayuresh_wankhede.jpg"
           alt=""

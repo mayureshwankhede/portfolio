@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 const Projects = () => {
   const cardName = useSelector((state) => state.card.name);
+  const cardRef = useRef();
+  useEffect(() => {
+    if (cardName == "projects") {
+      cardRef.current.style.opacity = 0.5;
+      cardRef.current.style.top = "-6px";
+      setTimeout(() => {
+        cardRef.current.style.opacity = 1;
+        cardRef.current.style.top = "16px";
+      }, 200);
+    }
+  }, [cardName]);
 
   return (
     <div
-      className={` bg-white shadow overflow-hidden sm:rounded-lg my-8 border-black border-2 card-shadow ${
+      ref={cardRef}
+      className={`relative transform transition-all duration-150 ease-out  bg-white shadow overflow-hidden sm:rounded-lg my-8 border-black border-2 card-shadow ${
         cardName == "projects" ? "-order-1" : ""
       }`}
     >
       <div className="px-4 pt-5 pb-2 sm:px-6">
-        <h3 className="text-lg leading-6 font-semibold text-gray-900">
+        <h3 className="text-lg leading-6 font-semibold text-gray-900 uppercase">
           <RoughNotation
             type="highlight"
             show={cardName == "projects" ? true : false}
@@ -23,26 +36,18 @@ const Projects = () => {
       </div>
 
       <div className="px-4 pb-5 sm:px-6">
-        <div className="flex justify-between p-2">
-          <div className="  flex-auto w-64 pr-5">
+        <div className="flex flex-col justify-between p-2 md:flex-row">
+          <div className="flex-[0_0_100%]    md:flex-auto md:mr-5 md:w-32">
+            <img
+              src="https://dummyimage.com/500x500/ccc5f3/fff"
+              alt=""
+              srcSet=""
+              className="rounded w-full "
+            />
+          </div>
+          <div className="flex-[0_0_100%] mt-6 mb-3 md:flex-auto md:mt-0 md:w-64">
             <h3 className="font-bold ">
               <span className="pr-2">Similique</span>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-4 h-4 inline-block cursor-pointer"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
-              </span>
             </h3>
             <p className="text-justify">
               Consequatur quidem deserunt qui fugit cumque ut esse est
@@ -50,52 +55,19 @@ const Projects = () => {
               exercitationem sed similique. Incidunt quae suscipit nihil
               deleniti. Possimus praesentium sunt aut tempora ut alias.
             </p>
-          </div>
-          <div className=" flex-auto w-32  ">
-            <img
-              src="https://dummyimage.com/500x500/ccc5f3/fff"
-              alt=""
-              srcSet=""
-              className="rounded"
-            />
-          </div>
-        </div>
 
-        <div className="flex justify-between p-2">
-          <div className="  flex-auto w-64 pr-5">
-            <h3 className="font-bold ">
-              <span className="pr-2">Similique</span>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-4 h-4 inline-block cursor-pointer"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
-              </span>
-            </h3>
-            <p className="text-justify">
-              Consequatur quidem deserunt qui fugit cumque ut esse est
-              dignissimos. Itaque quia et veritatis. Qui voluptatem dolor quia
-              exercitationem sed similique. Incidunt quae suscipit nihil
-              deleniti. Possimus praesentium sunt aut tempora ut alias.
-            </p>
-          </div>
-          <div className=" flex-auto w-32  ">
-            <img
-              src="https://dummyimage.com/500x500/ccc5f3/fff"
-              alt=""
-              srcSet=""
-              className="rounded"
-            />
+            <div className="text-sm mt-3">
+              <Link href="#">
+                <a className="mr-2 my-1 border hover:bg-gray-100  font-bold py-2 px-4 ">
+                  DEMO
+                </a>
+              </Link>
+              <Link href="#">
+                <a className="ml-2 my-1 border bg-gray-700 hover:bg-gray-900  text-white  font-bold py-2 px-4 ">
+                  GITHUB
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
