@@ -1,5 +1,5 @@
 import React from "react";
-
+import { RoughNotation } from "react-rough-notation";
 const Introduction = () => {
   return (
     <div className="introduction flex justify-between p-2 pt-16 -order-2">
@@ -9,13 +9,15 @@ const Introduction = () => {
         >
           Mayuresh Wankhede
         </h1>
-        <p className="text-gray-600 text-sm mb-3">
-          FullStack Developer at{" "}
-          <span className="text-black font-bold">SimpleSplit Inc.</span>
-        </p>
+        <div className="text-gray-600 text-sm mb-3 ">
+          <div className="available-dot align-middle">
+            <div className="circle"></div>
+          </div>
+          <span className="underline text-blue-600">available for hire</span>
+        </div>
         <p className="text-gray-600 text-sm">
-          Helping developers build a faster web. Teaching about web development,
-          serverless, and React / Next.js.
+          Over 90k+ students have enrolled and learned from my udemy course.
+          Teaching about web & App development, serverless, and React / Next.js.
         </p>
       </div>
       <div className="flex-grow">

@@ -30,7 +30,7 @@ const Link = (props) => {
         strokeWidth={2}
       >
         <RoughNotation
-          type="crossed-off"
+          type="circle"
           show={id == cardName ? true : false}
           color="#ff3b00"
           strokeWidth={2}
