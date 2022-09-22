@@ -87,12 +87,61 @@ const Projects = () => {
                   DEMO
                 </a>
               </Link>
-              <Link href="https://github.com/mayureshwankhede/capstone">
+              {/* <Link href="https://github.com/mayureshwankhede/capstone">
                 <a
                   target="_blank"
                   className="ml-2 my-1 border bg-gray-700 hover:bg-gray-900  text-white  font-bold py-2 px-4 "
                 >
                   GITHUB
+                </a>
+              </Link> */}
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col flex-wrap justify-between p-2 md:flex-row">
+          <div className="flex-[0_0_100%]    md:flex-auto md:mr-5 md:w-32">
+            <img
+              src="https://dummyimage.com/500x500/ccc5f3/fff&text=ecommerce"
+              alt=""
+              srcSet=""
+              className="rounded w-full "
+            />
+          </div>
+          <div className="flex-[0_0_100%] mt-6 mb-3 md:flex-auto md:mt-0 md:w-64">
+            <h3 className="font-bold ">
+              <span className="pr-2">Theme Changer using ML</span>
+            </h3>
+            <div className="flex flex-wrap">
+              <span class="m-0.5 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ">
+                React
+              </span>
+              <span class="m-0.5 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ">
+                Brain.js
+              </span>
+              <span class="m-0.5 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ">
+                Javascript
+              </span>
+              <br />
+
+              <span class="m-0.5 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ">
+                NodeJs
+              </span>
+              <span class="m-0.5 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ">
+                vercel
+              </span>
+            </div>
+            <p className="text-justify my-4 text-sm">
+              A simple light/dark mode toggle triggered by Machine learning
+              based on background color. Also you can train the AI if its not
+              working properly.
+            </p>
+            <div className="text-sm mt-3">
+              <Link href="https://theme-changer-ml-h7pw.vercel.app/">
+                <a
+                  target="_blank"
+                  className="mr-2 my-1 border hover:bg-gray-100  font-bold py-2 px-4 "
+                >
+                  DEMO
                 </a>
               </Link>
             </div>
